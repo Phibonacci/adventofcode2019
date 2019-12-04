@@ -38,5 +38,22 @@
         "moduleLoad": false,
       }
     },
+    {
+      "name": "day03",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/day03.exe",
+      "args": [ 
+        "input.txt"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/day03",
+      "preLaunchTask": "cargo build",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "moduleLoad": false,
+      }
+    },
   ]
 }
