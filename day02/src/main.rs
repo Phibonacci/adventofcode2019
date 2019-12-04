@@ -66,20 +66,16 @@ fn find19690720(content : Vec<i32>) -> Result<i32, &'static str> {
   loop {
     match calculate(&mut content_copy, noun, verb) {
       Ok(result) => match result {
-        n if n < 19690720 => {
+        n if n < 19690720 && verb < 99 => {
           verb += 1;
         },
         19690720 => return Ok(100 * noun + verb),
-        n if n > 19690720 => {
+        _ => {
           noun += 1;
           verb = 1;
         },
-        _ => return Err("Impossible happened"),
       },
-      Err(_e) => {
-        noun += 1;
-        verb = 1;
-      },
+      Err(e) => return Err(e),
     }
     content_copy = content.clone();
   }
