@@ -96,14 +96,15 @@ fn get_intersection(segment1 : &Line, segment2 : &Line) -> Result<Point, &'stati
     && segment2.p1.y == segment2.p2.y
     && between(segment1.p1.x, segment2.p1.x, segment2.p2.x)
     && between(segment2.p1.y, segment1.p1.y, segment1.p2.y) {
-      return Ok(Point{ x : segment1.p1.x, y: segment2.p1.y});
+    Ok(Point{ x : segment1.p1.x, y: segment2.p1.y})
   } else if segment1.p1.y == segment1.p2.y
     && segment2.p1.x == segment2.p2.x
     && between(segment2.p1.x, segment1.p1.x, segment1.p2.x)
     && between(segment1.p1.y, segment2.p1.y, segment2.p2.y) {
-    return Ok(Point{ x : segment2.p1.x, y: segment1.p1.y});
+    Ok(Point{ x : segment2.p1.x, y: segment1.p1.y})
+  } else {
+    Err("Not intersection")
   }
-  Err("Not intersection")
 }
 
 fn closest_intersection_distance(wires_segments : &Vec<Vec<Line>>) -> i32 {
