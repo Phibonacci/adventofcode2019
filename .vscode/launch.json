@@ -55,5 +55,23 @@
         "moduleLoad": false,
       }
     },
+    {
+      "name": "day04",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/day04.exe",
+      "args": [ 
+        "240298",
+        "784956"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/day04",
+      "preLaunchTask": "cargo build",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "moduleLoad": false,
+      }
+    },
   ]
 }
