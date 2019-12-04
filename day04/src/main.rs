@@ -1,11 +1,4 @@
-use std::{
-  env,
-  fs,
-  io::{prelude::*},
-  path,
-};
-
-fn is_valid_password(password : &Vec<i32>, twin : bool) -> Result<bool, &'static str> {
+fn is_valid_password(password : &Vec<i8>, twin : bool) -> Result<bool, &'static str> {
   let mut previous_digit = -1;
   let mut found_duplicate = false;
   let mut duplicate_size = 1;
@@ -37,8 +30,8 @@ fn is_valid_password(password : &Vec<i32>, twin : bool) -> Result<bool, &'static
   Ok(if twin { found_duplicate && found_twin} else {found_duplicate})
 }
 
-fn increment_password(password : &mut Vec<i32>) {
-  let mut i = (password.len() - 1) as i32;
+fn increment_password(password : &mut Vec<i8>) {
+  let mut i = (password.len() - 1) as i8;
   while i >= 0 {
     if password[i as usize] < 9 {
       password[i as usize] += 1;
@@ -50,7 +43,7 @@ fn increment_password(password : &mut Vec<i32>) {
   }
 }
 
-fn get_valid_password_count(start: &Vec<i32>, end : &Vec<i32>, twin : bool) -> i32 {
+fn get_valid_password_count(start: &Vec<i8>, end : &Vec<i8>, twin : bool) -> i8 {
   let mut current = start.clone();
   let mut valid_count = 0;
   while current != *end {
@@ -62,15 +55,29 @@ fn get_valid_password_count(start: &Vec<i32>, end : &Vec<i32>, twin : bool) -> i
   valid_count
 }
 
+fn part1(start: &Vec<i8>, end : &Vec<i8>) {
+  let before = std::time::Instant::now();
+  let result1 = get_valid_password_count(&start, &end, false);
+  println!("Elapsed time: {:.2?}", before.elapsed());
+  println!("Part1: number of valid password: {}", result1);
+}
+
+fn part2(start: &Vec<i8>, end : &Vec<i8>) {
+  let before = std::time::Instant::now();
+  let result2 = get_valid_password_count(&start, &end, true);
+  println!("Elapsed time: {:.2?}", before.elapsed());
+  println!("Part2: number of valid password: {}", result2);
+}
+
 fn main() {
-  let args: Vec<String> = env::args().collect();
+  let before = std::time::Instant::now();
+  let args: Vec<String> = std::env::args().collect();
   if args.len() < 3 {
     panic!("Not enough arguments");
   }
-  let start = args[1].chars().map(|c| c.to_digit(10).unwrap() as i32).collect();
-  let end = args[2].chars().map(|c| c.to_digit(10).unwrap() as i32).collect();
-  let result1 = get_valid_password_count(&start, &end, false);
-  println!("Part1: number of valid password: {}", result1);
-  let result2 = get_valid_password_count(&start, &end, true);
-  println!("Part2: number of valid password: {}", result2);
+  let start = args[1].chars().map(|c| c.to_digit(10).unwrap() as i8).collect();
+  let end = args[2].chars().map(|c| c.to_digit(10).unwrap() as i8).collect();
+  part1(&start, &end);
+  part2(&start, &end);
+  println!("Total elapsed time: {:.2?}", before.elapsed());
 }
