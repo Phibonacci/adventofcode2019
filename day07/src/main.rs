@@ -154,10 +154,6 @@ impl VirtualMachine {
     ))
   }
 
-  fn has_exit(&self) {
-    self.memory[self.pointer] == 99;
-  }
-
   fn run(&mut self) -> Result<Option<i32>, &'static str> {
     self.halted = false;
     let mut output = 0;
@@ -294,6 +290,6 @@ fn main() {
   let filename = &args[1];
   println!("Loading file {}", filename);
   let content = parse_file(filename);
-  //part1(&content);
+  part1(&content);
   part2(&content);
 }
