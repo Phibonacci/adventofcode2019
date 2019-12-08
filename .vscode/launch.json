@@ -107,5 +107,22 @@
         "moduleLoad": false,
       }
     },
+    {
+      "name": "day07",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/day07.exe",
+      "args": [ 
+        "input.txt"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/day07",
+      "preLaunchTask": "cargo build",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "moduleLoad": false,
+      }
+    },
   ]
 }
