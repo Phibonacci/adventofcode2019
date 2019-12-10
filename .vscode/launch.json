@@ -141,5 +141,22 @@
         "moduleLoad": false,
       }
     },
+    {
+      "name": "day09",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/day09.exe",
+      "args": [ 
+        "input.txt"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/day09",
+      "preLaunchTask": "cargo build",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "moduleLoad": false,
+      }
+    },
   ]
 }
