@@ -158,5 +158,22 @@
         "moduleLoad": false,
       }
     },
+    {
+      "name": "day10",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/day10.exe",
+      "args": [ 
+        "input.txt"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/day10",
+      "preLaunchTask": "cargo build",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "moduleLoad": false,
+      }
+    },
   ]
 }
