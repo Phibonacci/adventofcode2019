@@ -9,7 +9,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day01.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -26,7 +26,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day02.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -43,7 +43,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day03.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -60,7 +60,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day04.exe",
-      "args": [ 
+      "args": [
         "240298",
         "784956"
       ],
@@ -78,7 +78,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day05.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -95,7 +95,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day06.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -112,7 +112,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day07.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -129,7 +129,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day08.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -146,7 +146,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day09.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
@@ -163,11 +163,28 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/day10.exe",
-      "args": [ 
+      "args": [
         "input.txt"
       ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}/day10",
+      "preLaunchTask": "cargo build",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "moduleLoad": false,
+      }
+    },
+    {
+      "name": "day11",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/day11.exe",
+      "args": [
+        "input.txt"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/day11",
       "preLaunchTask": "cargo build",
       "environment": [],
       "externalConsole": false,
